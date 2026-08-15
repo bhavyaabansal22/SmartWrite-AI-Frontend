@@ -44,8 +44,10 @@ function ThemeToggle() {
 }
 
 const navItems = [
-  { to: "/", label: "Workspace" },
-  { to: "/about", label: "About" },
+  { hash: "about", label: "About" },
+  { hash: "workspace", label: "Workspace" },
+  { hash: "purpose", label: "Purpose" },
+  { hash: "creator", label: "Creator" },
 ] as const;
 
 export function Header() {
@@ -63,11 +65,10 @@ export function Header() {
         <nav aria-label="Main" className="hidden items-center gap-1 md:flex">
           {navItems.map((item) => (
             <Link
-              key={item.to}
-              to={item.to}
+              key={item.hash}
+              to="/"
+              hash={item.hash}
               className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-              activeProps={{ className: "text-foreground font-medium" }}
-              activeOptions={{ exact: true }}
             >
               {item.label}
             </Link>
@@ -104,8 +105,9 @@ export function Header() {
           <div className="mx-auto flex max-w-6xl flex-col px-4 py-2">
             {navItems.map((item) => (
               <Link
-                key={item.to}
-                to={item.to}
+                key={item.hash}
+                to="/"
+                hash={item.hash}
                 onClick={() => setOpen(false)}
                 className="rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
               >
