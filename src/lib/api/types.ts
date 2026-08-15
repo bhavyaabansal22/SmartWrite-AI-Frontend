@@ -47,7 +47,7 @@ export interface HealthResponse {
 }
 
 export class ApiError extends Error {
-  status?: number;
+  status?: number | undefined;
   constructor(message: string, status?: number) {
     super(message);
     this.name = "ApiError";
