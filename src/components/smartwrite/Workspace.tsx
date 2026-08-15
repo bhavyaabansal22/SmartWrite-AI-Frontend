@@ -138,9 +138,9 @@ export function Workspace({ id }: { id?: string }) {
   const acceptSuggestion = useCallback(
     (suggestion: string) => {
       setText((prev) => {
-        const match = /[\p{L}\p{N}'-]+$/u.exec(prev);
-        const base = match ? prev.slice(0, prev.length - match[0].length) : prev;
-        return `${base}${suggestion} `;
+        // Insert the suggestion AFTER the current word — never replace what was typed.
+        const needsSpace = prev.length > 0 && !/\s$/.test(prev);
+        return `${prev}${needsSpace ? " " : ""}${suggestion} `;
       });
       setSuggestions([]);
       setDismissed(true);

@@ -139,7 +139,7 @@ export async function autocorrectText(
   if (USE_MOCK_API) return mockApi.autocorrect(text);
   const raw = await request<Record<string, unknown>>("/autocorrect", {
     method: "POST",
-    body: { text },
+    body: { text, top_n: 3, max_suggestions: 3 },
     ...(signal ? { signal } : {}),
   });
   const corrections = normalizeCorrections(raw?.["corrections"]);
