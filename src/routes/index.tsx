@@ -1,10 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useCallback } from "react";
 import { AboutSection } from "@/components/smartwrite/AboutSection";
+import { CreatorSection } from "@/components/smartwrite/CreatorSection";
 import { FeatureOverview } from "@/components/smartwrite/FeatureOverview";
 import { Footer } from "@/components/smartwrite/Footer";
 import { Header } from "@/components/smartwrite/Header";
 import { Hero } from "@/components/smartwrite/Hero";
+import { PurposeSection } from "@/components/smartwrite/PurposeSection";
 import { Workspace } from "@/components/smartwrite/Workspace";
 
 export const Route = createFileRoute("/")({
@@ -41,8 +43,10 @@ function Index() {
           onExploreFeatures={() => scrollTo("features")}
         />
         <FeatureOverview id="features" />
-        <Workspace id="workspace" />
         <AboutSection id="about" />
+        <Workspace id="workspace" />
+        <PurposeSection id="purpose" />
+        <CreatorSection id="creator" />
       </main>
       <Footer />
     </div>
