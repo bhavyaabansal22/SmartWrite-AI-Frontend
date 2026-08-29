@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import {
   CREATOR_NAME,
   CREATOR_ROLE,
-  EMAIL,
+  EMAIL_URL,
   GITHUB_URL,
   LINKEDIN_URL,
   PORTFOLIO_URL,
@@ -19,7 +19,7 @@ const facts = [
 const links = [
   { href: GITHUB_URL, label: "GitHub", icon: Github },
   { href: LINKEDIN_URL, label: "LinkedIn", icon: Linkedin },
-  { href: `mailto:${EMAIL}`, label: "Email", icon: Mail },
+  { href: EMAIL_URL, label: "Email", icon: Mail },
   { href: PORTFOLIO_URL, label: "Portfolio", icon: Globe },
 ];
 

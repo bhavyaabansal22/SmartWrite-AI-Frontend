@@ -3,6 +3,7 @@ import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
 import {
   CREATOR_NAME,
   EMAIL,
+  EMAIL_URL,
   GITHUB_URL,
   LINKEDIN_URL,
   PORTFOLIO_URL,
@@ -20,7 +21,7 @@ const sections = [
 const socials = [
   { href: GITHUB_URL, label: "GitHub", handle: "bhavyaabansal22", icon: Github },
   { href: LINKEDIN_URL, label: "LinkedIn", handle: "bhavyaa-bansal", icon: Linkedin },
-  { href: `mailto:${EMAIL}`, label: "Email", handle: EMAIL, icon: Mail },
+  { href: EMAIL_URL, label: "Email", handle: EMAIL, icon: Mail },
 ];
 
 export function Footer() {

@@ -156,7 +156,12 @@ export async function autocorrectText(
 
 export async function generateText(payload: GenerateRequest): Promise<AIResponse> {
   if (USE_MOCK_API) return mockApi.ai("generate", payload.instructions ?? payload.text ?? "");
-  const raw = await request<unknown>("/generate", { method: "POST", body: payload });
+  // The backend requires a `content` field describing what to write.
+  const content = (payload.instructions?.trim() || payload.text?.trim()) ?? "";
+  const raw = await request<unknown>("/generate", {
+    method: "POST",
+    body: { ...payload, content },
+  });
   return { result: extractResultText(raw) };
 }
 

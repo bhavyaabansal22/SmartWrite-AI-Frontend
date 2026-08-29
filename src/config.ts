@@ -10,8 +10,10 @@ export const USE_MOCK_API = false;
 
 export const GITHUB_URL = "https://github.com/bhavyaabansal22";
 export const PORTFOLIO_URL = "https://portfolio-website-theta-lemon.vercel.app/";
-export const LINKEDIN_URL = "https://www.linkedin.com/in/bhavyaa-bansal-0b5170334/";
+export const LINKEDIN_URL = "https://www.linkedin.com/in/bhavyaa-bansal-0b5170334";
 export const EMAIL = "bhavyaabansal22@gmail.com";
+/** Opens Gmail's web compose (falls back to Gmail sign-in) instead of a desktop mail client. */
+export const EMAIL_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EMAIL)}`;
 
 export const CREATOR_NAME = "Bhavyaa Bansal";
 export const CREATOR_ROLE = "B.Tech AI & ML Student · Delhi, India";
